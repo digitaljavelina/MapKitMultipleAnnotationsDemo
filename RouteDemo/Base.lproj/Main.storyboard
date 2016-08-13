@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Vcs-Nj-Gpn">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+    </dependencies>
+    <scenes>
+        <!--Route Demo-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="RouteViewController" customModule="RouteDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wuc-wY-0WU">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wuc-wY-0WU" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="1qW-g9-qFJ"/>
+                            <constraint firstItem="wuc-wY-0WU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DeU-aw-KX9"/>
+                            <constraint firstAttribute="trailing" secondItem="wuc-wY-0WU" secondAttribute="trailing" id="lAW-my-PdN"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wuc-wY-0WU" secondAttribute="bottom" id="mNa-Ny-duX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Route Demo" id="6Lk-w5-VBG">
+                        <barButtonItem key="leftBarButtonItem" title="Clear" id="O7e-Sk-Zb7">
+                            <connections>
+                                <action selector="removeAnnotations" destination="BYZ-38-t0r" id="bgu-Rx-q0N"/>
+                            </connections>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Routes" id="44C-g4-1Jw">
+                                <connections>
+                                    <action selector="drawRoute" destination="BYZ-38-t0r" id="Izd-4O-L7y"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Lines" id="pkt-mA-WxT">
+                                <connections>
+                                    <action selector="drawPolyline" destination="BYZ-38-t0r" id="5bN-mh-8GS"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="wuc-wY-0WU" id="K6f-GY-YwZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1057" y="324"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="blc-fU-ftz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Vcs-Nj-Gpn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="80a-ok-Hxb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="CDE-bW-xQ9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kfo-l2-OwL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="245" y="324"/>
+        </scene>
+    </scenes>
+</document>
